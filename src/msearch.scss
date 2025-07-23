@@ -1,0 +1,72 @@
+// SPDX-FileCopyrightText: 2025 Tom Hubrecht <github@mail.hubrecht.ovh>
+//
+// SPDX-License-Identifier: EUPL-1.2
+
+@use "sass:meta";
+
+$family-monospace: "Atkinson Hyperlegible Mono", monospace;
+$family-sans-serif: "Atkinson Hyperlegible Next", sans-serif;
+
+@use "bulma/sass" with (
+  $primary: #d0bfff,
+  $family-monospace: #{meta.inspect($family-monospace)},
+  $family-sans-serif: #{meta.inspect($family-sans-serif)}
+);
+
+@use "scss/sticky-table";
+
+#root {
+  min-height: calc(100vh - var(--bulma-navbar-height));
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+table {
+  table-layout: fixed;
+  height: calc(max(100%, 350px));
+
+  tr {
+    word-wrap: break-word;
+
+    .ellipsis {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+}
+
+.navbar {
+  --bulma-navbar-burger-color: var(--bulma-body-color);
+}
+
+.modal-card-head {
+  display: block;
+}
+
+#search-form {
+  position: sticky;
+  top: var(--bulma-navbar-height);
+  background: linear-gradient(
+    var(--bulma-scheme-main),
+    hsl(from var(--bulma-scheme-main) h s l / 65%)
+  );
+  padding-top: 1em;
+  backdrop-filter: blur(3px);
+
+  table {
+    --bulma-table-background-color: transparent;
+  }
+
+  --bulma-duration: 0ms;
+}
+
+tbody tr {
+  cursor: pointer;
+}
+
+.modal {
+  --bulma-modal-card-head-padding: 1rem;
+}

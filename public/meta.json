@@ -1,0 +1,27 @@
+{
+  "modules": {
+    "arkheon": {
+      "path": "data/options-arkheon.json",
+      "title": "Arkheon"
+    },
+    "nix-modules": {
+      "path": "data/options-arkheon.json",
+      "title": "Nix Modules"
+    },
+    "nixos-unstable": {
+      "path": "data/options-nixos-unstable.json",
+      "title": "NixOS unstable"
+    },
+    "home-manager": {
+      "path": "data/options-home-manager.json",
+      "title": "Home Manager"
+    }
+  },
+  "defaultSet": "nix-modules",
+  "links": [
+    {
+      "name": "Arkheon",
+      "href": "https://github.com/RaitoBezarius/arkheon"
+    }
+  ]
+}

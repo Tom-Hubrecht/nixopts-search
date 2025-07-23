@@ -1,0 +1,247 @@
+[
+  {
+    "declarations": [
+      {
+        "name": "<nix/module.nix>",
+        "url": "https://github.com/RaitoBezarius/arkheon/tree/main/nix/module.nix"
+      }
+    ],
+    "default": "true",
+    "description": "Whether to configure nginx as a reverse proxy for Arkheon.",
+    "example": "",
+    "loc": [
+      "services",
+      "arkheon",
+      "configureNginx"
+    ],
+    "readOnly": false,
+    "title": "services.arkheon.configureNginx",
+    "type": "boolean",
+    "descriptionHTML": "<p>Whether to configure nginx as a reverse proxy for Arkheon.</p>"
+  },
+  {
+    "declarations": [
+      {
+        "name": "<nix/module.nix>",
+        "url": "https://github.com/RaitoBezarius/arkheon/tree/main/nix/module.nix"
+      }
+    ],
+    "default": "",
+    "description": "Domain of the Arkheon server.",
+    "example": "",
+    "loc": [
+      "services",
+      "arkheon",
+      "domain"
+    ],
+    "readOnly": false,
+    "title": "services.arkheon.domain",
+    "type": "string",
+    "descriptionHTML": "<p>Domain of the Arkheon server.</p>"
+  },
+  {
+    "declarations": [
+      {
+        "name": "<nix/module.nix>",
+        "url": "https://github.com/RaitoBezarius/arkheon/tree/main/nix/module.nix"
+      }
+    ],
+    "default": "false",
+    "description": "Whether to enable Arkheon.",
+    "example": "true",
+    "loc": [
+      "services",
+      "arkheon",
+      "enable"
+    ],
+    "readOnly": false,
+    "title": "services.arkheon.enable",
+    "type": "boolean",
+    "descriptionHTML": "<p>Whether to enable Arkheon.</p>"
+  },
+  {
+    "declarations": [
+      {
+        "name": "<nix/module.nix>",
+        "url": "https://github.com/RaitoBezarius/arkheon/tree/main/nix/module.nix"
+      }
+    ],
+    "default": "",
+    "description": "Settings to pass as environment variables",
+    "example": "",
+    "loc": [
+      "services",
+      "arkheon",
+      "environment"
+    ],
+    "readOnly": false,
+    "title": "services.arkheon.environment",
+    "type": "attribute set of string",
+    "descriptionHTML": "<p>Settings to pass as environment variables</p>"
+  },
+  {
+    "declarations": [
+      {
+        "name": "<nix/module.nix>",
+        "url": "https://github.com/RaitoBezarius/arkheon/tree/main/nix/module.nix"
+      }
+    ],
+    "default": "",
+    "description": "URI of the Sqlite database.",
+    "example": "",
+    "loc": [
+      "services",
+      "arkheon",
+      "environment",
+      "ARKHEON_DATABASE_URL"
+    ],
+    "readOnly": false,
+    "title": "services.arkheon.environment.ARKHEON_DATABASE_URL",
+    "type": "unspecified value",
+    "descriptionHTML": "<p>URI of the Sqlite database.</p>"
+  },
+  {
+    "declarations": [
+      {
+        "name": "<nix/module.nix>",
+        "url": "https://github.com/RaitoBezarius/arkheon/tree/main/nix/module.nix"
+      }
+    ],
+    "default": "pkgs.arkheon",
+    "description": "The arkheon package to use.",
+    "example": "",
+    "loc": [
+      "services",
+      "arkheon",
+      "package"
+    ],
+    "readOnly": false,
+    "title": "services.arkheon.package",
+    "type": "package",
+    "descriptionHTML": "<p>The arkheon package to use.</p>"
+  },
+  {
+    "declarations": [
+      {
+        "name": "<nix/module.nix>",
+        "url": "https://github.com/RaitoBezarius/arkheon/tree/main/nix/module.nix"
+      }
+    ],
+    "default": "false",
+    "description": "Whether to enable Arkheon recording of deployments..",
+    "example": "true",
+    "loc": [
+      "services",
+      "arkheon",
+      "record",
+      "enable"
+    ],
+    "readOnly": false,
+    "title": "services.arkheon.record.enable",
+    "type": "boolean",
+    "descriptionHTML": "<p>Whether to enable Arkheon recording of deployments..</p>"
+  },
+  {
+    "declarations": [
+      {
+        "name": "<nix/module.nix>",
+        "url": "https://github.com/RaitoBezarius/arkheon/tree/main/nix/module.nix"
+      }
+    ],
+    "default": "null",
+    "description": "Set the identifier of the machine so as to not rely on the hostname.",
+    "example": "",
+    "loc": [
+      "services",
+      "arkheon",
+      "record",
+      "identifier"
+    ],
+    "readOnly": false,
+    "title": "services.arkheon.record.identifier",
+    "type": "null or string",
+    "descriptionHTML": "<p>Set the identifier of the machine so as to not rely on the hostname.</p>"
+  },
+  {
+    "declarations": [
+      {
+        "name": "<nix/module.nix>",
+        "url": "https://github.com/RaitoBezarius/arkheon/tree/main/nix/module.nix"
+      }
+    ],
+    "default": "null",
+    "description": "Path to a file containing the token used for authorized records post.",
+    "example": "",
+    "loc": [
+      "services",
+      "arkheon",
+      "record",
+      "tokenFile"
+    ],
+    "readOnly": false,
+    "title": "services.arkheon.record.tokenFile",
+    "type": "null or absolute path",
+    "descriptionHTML": "<p>Path to a file containing the token used for authorized records post.</p>"
+  },
+  {
+    "declarations": [
+      {
+        "name": "<nix/module.nix>",
+        "url": "https://github.com/RaitoBezarius/arkheon/tree/main/nix/module.nix"
+      }
+    ],
+    "default": "",
+    "description": "URL of the Arkheon server.",
+    "example": "\"http://127.0.0.1:8000\"",
+    "loc": [
+      "services",
+      "arkheon",
+      "record",
+      "url"
+    ],
+    "readOnly": false,
+    "title": "services.arkheon.record.url",
+    "type": "string",
+    "descriptionHTML": "<p>URL of the Arkheon server.</p>"
+  },
+  {
+    "declarations": [
+      {
+        "name": "<nix/module.nix>",
+        "url": "https://github.com/RaitoBezarius/arkheon/tree/main/nix/module.nix"
+      }
+    ],
+    "default": "{ }",
+    "description": "Secrets that will be passed to Arkheon via LoadCredential.",
+    "example": "",
+    "loc": [
+      "services",
+      "arkheon",
+      "secrets"
+    ],
+    "readOnly": false,
+    "title": "services.arkheon.secrets",
+    "type": "attribute set of absolute path",
+    "descriptionHTML": "<p>Secrets that will be passed to Arkheon via LoadCredential.</p>"
+  },
+  {
+    "declarations": [
+      {
+        "name": "<nix/module.nix>",
+        "url": "https://github.com/RaitoBezarius/arkheon/tree/main/nix/module.nix"
+      }
+    ],
+    "default": "4",
+    "description": "Number of uvicorn workers to spawn.",
+    "example": "",
+    "loc": [
+      "services",
+      "arkheon",
+      "workers"
+    ],
+    "readOnly": false,
+    "title": "services.arkheon.workers",
+    "type": "signed integer",
+    "descriptionHTML": "<p>Number of uvicorn workers to spawn.</p>"
+  }
+]

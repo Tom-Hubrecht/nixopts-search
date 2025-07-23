@@ -1,0 +1,45 @@
+{
+  "version": "1",
+  "sources": {
+    "git-hooks.nix": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "cachix",
+      "repo": "git-hooks.nix",
+      "branch": "master",
+      "revision": "16ec914f6fb6f599ce988427d9d94efddf25fe6d",
+      "url": "https://github.com/cachix/git-hooks.nix/archive/16ec914f6fb6f599ce988427d9d94efddf25fe6d.tar.gz",
+      "hash": "sha256-wibppH3g/E2lxU43ZQHC5yA/7kIKLGxVEnsnVK1BtRg="
+    },
+    "gitignore.nix": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "hercules-ci",
+      "repo": "gitignore.nix",
+      "branch": "master",
+      "revision": "637db329424fd7e46cf4185293b9cc8c88c95394",
+      "url": "https://github.com/hercules-ci/gitignore.nix/archive/637db329424fd7e46cf4185293b9cc8c88c95394.tar.gz",
+      "hash": "sha256-HG2cCnktfHsKV0s4XW83gU3F57gaTljL9KNSuG6bnQs="
+    },
+    "nix-reuse": {
+      "type": "Git",
+      "fetchType": "git",
+      "branch": "main",
+      "revision": "c172a2c701267717ae1f7db8f7350342d717d5d8",
+      "url": "https://git.dgnum.eu/DGNum/nix-reuse.git",
+      "hash": "sha256-eS/o6pToIzct4orLghxPKbwb1wCxT/ZdcY9aDNfCPls=",
+      "lastModified": 1752753299,
+      "submodules": false
+    },
+    "nixpkgs": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "NixOS",
+      "repo": "nixpkgs",
+      "branch": "nixos-unstable",
+      "revision": "62e0f05ede1da0d54515d4ea8ce9c733f12d9f08",
+      "url": "https://github.com/NixOS/nixpkgs/archive/62e0f05ede1da0d54515d4ea8ce9c733f12d9f08.tar.gz",
+      "hash": "sha256-JHQbm+OcGp32wAsXTE/FLYGNpb+4GLi5oTvCxwSoBOA="
+    }
+  }
+}

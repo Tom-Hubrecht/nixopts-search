@@ -1,0 +1,20 @@
+###
+# This file was automatically generated with nix-reuse.
+version = 1
+[[annotations]]
+SPDX-FileCopyrightText = "NONE"
+SPDX-License-Identifier = "CC0-1.0"
+path = [".envrc", ".gitignore", "lon.lock", "lon.nix", "package-lock.json", "package.json", "tsconfig.json", "tsconfig.node.json", "vite.config.ts"]
+precedence = "closest"
+
+[[annotations]]
+SPDX-FileCopyrightText = "Jeremy Thomas"
+SPDX-License-Identifier = "MIT"
+path = "src/sass/bulma/**"
+precedence = "closest"
+
+[[annotations]]
+SPDX-FileCopyrightText = "2020 Braille Institute of America, Inc."
+SPDX-License-Identifier = "OFL-1.1"
+path = ["src/assets/fonts/AtkinsonHyperlegibleMono-Regular.woff2", "src/assets/fonts/AtkinsonHyperlegibleNext-Regular.woff2"]
+precedence = "closest"
