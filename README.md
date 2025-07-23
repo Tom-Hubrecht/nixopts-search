@@ -1,34 +1,66 @@
-## Usage
+# NixOpts Search
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+This is a user-friendly tool to browse the documentation of NixOS modules offline.
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+It allows documenting as many option sets as you want in one place!
 
-```bash
-$ npm install # or pnpm install or yarn install
+E.g.
+
+- Home Manager
+- Lanzaboote
+- NixOS
+- Whatever custom modules you had to write for your infra
+
+## Configuration
+
+An example configuration that will host NixOS options documentation is:
+
+```nix
+{ config, lib, pkgs, ... }:
+
+{
+  imports = [ (sources.nixopts-search + "/nix/module.nix") ];
+
+  services.nginx.virtualHosts.${config.services.nixopts-search.host} = {
+    enableACME = true;
+    forceSSL = true;
+  };
+
+  services.nixopts-search = {
+    enable = true;
+
+    host = "search.example.com";
+
+    modules.nixos = {
+      title = "NixOS 25.05";
+
+      paths = import (pkgs.path + "/nixos/modules/module-list.nix");
+
+      origins = [
+        {
+          base = pkgs.path + "/nixos/modules";
+          url = "https://github.com/NixOS/nixpkgs/tree/nixos-25.05/nixos/modules";
+        }
+      ];
+
+      specialArgs = {
+        inherit pkgs lib;
+        modulesPath = pkgs.path + "/nixos/modules/";
+      };
+    };
+  };
+}
 ```
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+The served files can also be compressed to reduce bandwidth usage (going from 13MB to < 1MB for NixOS).
 
-## Available Scripts
+```nix
+{
+  nixopts-search.compression = {
+    brotli.enable = true;
+    gzip.enable = true;
+  };
+}
+```
 
-In the project directory, you can run:
-
-### `npm run dev` or `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+There is a [demo website](https://search.hubrecht.ovh) and some pictures in [./images]
