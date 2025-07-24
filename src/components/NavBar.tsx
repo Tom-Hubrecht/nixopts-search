@@ -1,4 +1,4 @@
-import { createSignal, For, type Component } from "solid-js";
+import { createSignal, For, Show, type Component } from "solid-js";
 
 const NavBar: Component<{ links: NavbarLink[] }> = ({ links }) => {
   const [active, setActive] = createSignal(false);
@@ -28,19 +28,21 @@ const NavBar: Component<{ links: NavbarLink[] }> = ({ links }) => {
               <path d="M4 18h4" />
             </svg>
           </span>
-          <a
-            role="button"
-            class="navbar-burger"
-            classList={{ "is-active": active() }}
-            aria-label="menu"
-            aria-expanded="false"
-            onclick={() => setActive(!active())}
-          >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
+          <Show when={links.length}>
+            <a
+              role="button"
+              class="navbar-burger"
+              classList={{ "is-active": active() }}
+              aria-label="menu"
+              aria-expanded="false"
+              onclick={() => setActive(!active())}
+            >
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </Show>
         </div>
 
         <div class="navbar-menu" classList={{ "is-active": active() }}>
