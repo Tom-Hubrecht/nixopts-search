@@ -307,9 +307,7 @@ in
         )
       );
       description = ''
-        Sets of modules to be documented separately. The identifier to give for
-        `settings.params.release_current_stable` (which is the default module shown) is the key after
-        passing through `sanitizeDerivationName`.
+        Sets of modules to be documented separately.
       '';
     };
 
