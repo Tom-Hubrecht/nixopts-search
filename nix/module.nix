@@ -18,6 +18,7 @@ let
     filter
     flip
     getAttr
+    hasAttr
     hasPrefix
     head
     listToAttrs
@@ -318,7 +319,6 @@ in
       description = ''
         The main module to show when loading the website.
       '';
-      apply = sanitizeDerivationName;
     };
 
     links = mkOption {
@@ -385,6 +385,10 @@ in
         message = ''
           `services.nixopts-search` can't be enabled without any modules to document.
         '';
+      }
+      {
+        assertion = hasAttr cfg.defaultSet cfg.modules;
+        message = "services.nixopts-search.defaultSet is '${cfg.defaultSet}', which is not one of the modules:\n  ${concatStringsSep "\n  " (attrNames cfg.modules)}";
       }
     ];
   };
