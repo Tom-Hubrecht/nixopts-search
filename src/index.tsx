@@ -1,10 +1,13 @@
 /* @refresh reload */
 import { render } from "solid-js/web";
 
-import App from "./App.jsx";
 import "./msearch.scss";
-import { Route, Router } from "@solidjs/router";
+import "@fontsource/atkinson-hyperlegible-mono";
+import "@fontsource/atkinson-hyperlegible-next";
+
+import App from "./App.jsx";
 import Page404 from "./Page404.jsx";
+import { Route, Router } from "@solidjs/router";
 
 const root = document.getElementById("root");
 
