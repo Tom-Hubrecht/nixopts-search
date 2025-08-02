@@ -5,7 +5,7 @@ const NavBar: Component<{ links: NavbarLink[] }> = ({ links }) => {
 
   return (
     <nav>
-      <div class="navbar is-fixed-top has-background-primary">
+      <div class="navbar is-fixed-top is-primary">
         <div class="navbar-brand">
           <span class="navbar-item" title="NixOpts Search">
             <svg
