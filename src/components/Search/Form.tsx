@@ -23,33 +23,8 @@ const Form: Component<{
     <>
       <div class="field is-horizontal">
         <div class="field-body">
-          <div class="field is-flex-grow-0">
-            <div class="control">
-              <div class="select is-fullwidth">
-                <select
-                  value={props.selected()}
-                  onInput={(e) => props.setSelected(e.currentTarget.value)}
-                >
-                  <For each={Object.entries(props.modules)}>
-                    {([key, mod]) => <option value={key}>{mod.title}</option>}
-                  </For>
-                </select>
-              </div>
-            </div>
-          </div>
-
           <div class="field is-expanded">
             <div class="field has-addons">
-              <div class="control is-expanded">
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Options Search"
-                  value={props.store.query}
-                  oninput={(e) => props.setStore("query", e.target.value)}
-                />
-              </div>
-
               <div class="control">
                 <span
                   class="button is-static"
@@ -64,6 +39,32 @@ const Form: Component<{
                   }
                   &nbsp;options
                 </span>
+              </div>
+
+              <div class="control is-expanded">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Options Search"
+                  value={props.store.query}
+                  oninput={(e) => props.setStore("query", e.target.value)}
+                  autofocus
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-flex-grow-0">
+            <div class="control">
+              <div class="select is-fullwidth">
+                <select
+                  value={props.selected()}
+                  onInput={(e) => props.setSelected(e.currentTarget.value)}
+                >
+                  <For each={Object.entries(props.modules)}>
+                    {([key, mod]) => <option value={key}>{mod.title}</option>}
+                  </For>
+                </select>
               </div>
             </div>
           </div>
